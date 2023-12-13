@@ -22,7 +22,7 @@ export default function Header({ menu }: HeaderProps) {
         <div className="flex items-center gap-40">
           <Link href="/" passHref className="flex items-center gap-4">
             <span className="hidden text-2xl font-semibold border-2 border-black lg:inline-block">
-              Next Drupal
+              Exoveless
             </span>
           </Link>
           <div className="hidden gap-6 text-lg lg:flex">
