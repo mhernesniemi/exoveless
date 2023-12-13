@@ -36,7 +36,7 @@ export default function MobileMenu({ items }: MobileMenuProps) {
     <div>
       <div className={menuOpen ? "fixed z-20 top-3 right-3" : undefined}>
         <button
-          className="inline-flex items-center px-5 py-2.5 rounded-lg focus:ring-4 focus:outline-none text-white bg-amber-700 hover:bg-amber-800 dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800"
+          className="inline-flex items-center px-5 py-2.5 rounded-lg focus:ring-4 focus:outline-none text-white bg-amber-700 hover:bg-amber-800"
           onClick={() => {
             menuOpen ? setMenuOpen(false) : setMenuOpen(true);
           }}
@@ -70,7 +70,7 @@ export default function MobileMenu({ items }: MobileMenuProps) {
       >
         <nav
           id={id}
-          className="fixed top-0 left-0 z-10 w-screen h-screen bg-white dark:bg-gray-900 dark:text-white"
+          className="fixed top-0 left-0 z-10 w-screen h-screen bg-white"
         >
           <ul className="w-full h-screen px-4 pt-20 overflow-scroll break-words">
             {items.map((item, index: number) => (
