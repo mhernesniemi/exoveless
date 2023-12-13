@@ -100,20 +100,6 @@ export default function Components({ mainMenu }: ComponentsProps) {
 
       <ContentSection>
         <Heading level="h2" size="large">
-          Button with click event
-        </Heading>
-        <Button
-          type="primary"
-          onClick={() => {
-            console.log("click");
-          }}
-        >
-          Click
-        </Button>
-      </ContentSection>
-
-      <ContentSection>
-        <Heading level="h2" size="large">
           Dropdown menu
         </Heading>
         <Dropdown
