@@ -1,9 +1,8 @@
-import { CgMenu, CgClose, CgChevronRight, CgChevronLeft } from "react-icons/cg";
-
-import { Transition } from "@headlessui/react";
+import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useEffect, useId, useState } from "react";
 import Link from "next/link";
 import MobileSubmenu from "./mobile-submenu";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 
 interface SublinkItem {
   title: string;
@@ -47,12 +46,12 @@ export default function MobileMenu({ items }: MobileMenuProps) {
           {menuOpen ? (
             <>
               <span className="sr-only">Close mobile menu</span>
-              <CgClose className="text-white w-7 h-7" />
+              <XMarkIcon />
             </>
           ) : (
             <>
               <span className="sr-only">Open mobile menu</span>
-              <CgMenu className="text-white w-7 h-7" />
+              <Menu />
             </>
           )}
         </button>

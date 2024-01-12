@@ -21,6 +21,8 @@ import Range from "components/forms/range";
 import Textarea from "components/forms/textarea";
 import Fieldset from "components/forms/fieldset";
 import ButtonContainer from "components/containers/button-container";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import Breadcrumbs from "components/breadcrumbs/breadcrumbs";
 
 interface ComponentsProps {
   mainMenu?: any;
@@ -64,6 +66,9 @@ export default function Components({ mainMenu }: ComponentsProps) {
         {accordionItems.map((item, index) => (
           <Accordion key={index} title={item.title} body={item.body} />
         ))}
+        <div className="flex items-center gap-1">
+          Code <ChevronDownIcon className="w-6 h-6 inline-block" />
+        </div>
       </ContentSection>
 
       <ContentSection>
@@ -100,6 +105,20 @@ export default function Components({ mainMenu }: ComponentsProps) {
 
       <ContentSection>
         <Heading level="h2" size="large">
+          Breadcrumbs
+        </Heading>
+        <ButtonContainer>
+          <Breadcrumbs
+            path={[
+              { title: "Products", url: "#" },
+              { title: "Category", url: "#" },
+            ]}
+          />
+        </ButtonContainer>
+      </ContentSection>
+
+      <ContentSection>
+        <Heading level="h2" size="large">
           Dropdown menu
         </Heading>
         <Dropdown
@@ -125,8 +144,8 @@ export default function Components({ mainMenu }: ComponentsProps) {
         <Heading level="h3" size="medium">
           Heading Medium
         </Heading>
-        <Heading level="h4" size="small" uppercase>
-          Heading Small uppercase
+        <Heading level="h4" size="small">
+          Heading Small
         </Heading>
       </ContentSection>
 
