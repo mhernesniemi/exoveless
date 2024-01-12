@@ -3,6 +3,7 @@ import { Fragment, useEffect, useId, useState } from "react";
 import Link from "next/link";
 import MobileSubmenu from "./mobile-submenu";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon } from "@heroicons/react/20/solid";
 
 interface SublinkItem {
   title: string;
@@ -35,7 +36,7 @@ export default function MobileMenu({ items }: MobileMenuProps) {
     <div>
       <div className={menuOpen ? "fixed z-20 top-3 right-3" : undefined}>
         <button
-          className="inline-flex items-center px-5 py-2.5 rounded-lg focus:ring-4 focus:outline-none text-white bg-amber-700 hover:bg-amber-800"
+          className="inline-flex items-center px-3 py-2 focus:ring-4 focus:outline-none text-white border"
           onClick={() => {
             menuOpen ? setMenuOpen(false) : setMenuOpen(true);
           }}
@@ -46,38 +47,29 @@ export default function MobileMenu({ items }: MobileMenuProps) {
           {menuOpen ? (
             <>
               <span className="sr-only">Close mobile menu</span>
-              <XMarkIcon />
+              <XMarkIcon className="h-7 w-7 text-black" />
             </>
           ) : (
             <>
               <span className="sr-only">Open mobile menu</span>
-              <Menu />
+              <Bars3Icon className="h-7 w-7 text-black" />
             </>
           )}
         </button>
       </div>
 
-      <Transition
-        as={Fragment}
-        show={menuOpen}
-        enter="transition ease-out duration-500"
-        enterFrom="opacity-0 translate-y-1"
-        enterTo="opacity-100 translate-y-0"
-        leave="transition ease-in duration-150"
-        leaveFrom="opacity-100 translate-y-0"
-        leaveTo="opacity-0 translate-y-1"
-      >
+      <Transition as={Fragment} show={menuOpen}>
         <nav
           id={id}
           className="fixed top-0 left-0 z-10 w-screen h-screen bg-white"
         >
-          <ul className="w-full h-screen px-4 pt-20 overflow-scroll break-words">
+          <ul className="w-full h-screen px-4 pt-20 overflow-scroll break-words border-b border-gray-300">
             {items.map((item, index: number) => (
               <li key={index}>
                 {!item.sublinks && (
                   <Link
                     href={item.url}
-                    className="block py-3 text-lg border-t border-gray-700"
+                    className="block py-3 text-lg border-t border-gray-300"
                   >
                     {item.title}
                   </Link>
@@ -89,7 +81,7 @@ export default function MobileMenu({ items }: MobileMenuProps) {
 
                 {/* Last item */}
                 {items[index + 1] ? null : (
-                  <div className="mb-10 border-b border-gray-700" />
+                  <div className="mb-10 border-b border-gray-300" />
                 )}
               </li>
             ))}

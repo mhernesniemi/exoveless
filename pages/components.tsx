@@ -66,9 +66,6 @@ export default function Components({ mainMenu }: ComponentsProps) {
         {accordionItems.map((item, index) => (
           <Accordion key={index} title={item.title} body={item.body} />
         ))}
-        <div className="flex items-center gap-1">
-          Code <ChevronDownIcon className="w-6 h-6 inline-block" />
-        </div>
       </ContentSection>
 
       <ContentSection>
@@ -155,34 +152,35 @@ export default function Components({ mainMenu }: ComponentsProps) {
         </Heading>
         <MobileMenu
           items={[
-            { title: "Finnish", url: "#" },
             {
-              title:
-                "English English English English English English English English",
-              url: "#",
-            },
-            { title: "Swedish", url: "#" },
-            { title: "Finnish", url: "#" },
-            { title: "English", url: "#" },
-            {
-              title:
-                "SwedishSwedishSwedishSwedishSwedishSwedishSwedish Swedish Swedish",
-              url: "#",
-            },
-            { title: "Finnish", url: "#" },
-            { title: "English", url: "#" },
-            {
-              title: "Swedish",
+              title: "Products",
               url: "#",
               sublinks: [
-                { title: "Sublink numero yks", url: "#" },
-                { title: "Sublink numero kaks", url: "#" },
-                { title: "Sublink numero kol", url: "#" },
-                { title: "Sublink numero nel", url: "#" },
+                { title: "Link one", url: "#" },
+                { title: "Link two", url: "#" },
+                { title: "Link three", url: "#" },
               ],
             },
-            { title: "Finnish", url: "#" },
-            { title: "English", url: "#" },
+            {
+              title: "Company",
+              url: "#",
+              sublinks: [
+                { title: "Link one", url: "#" },
+                { title: "Link two", url: "#" },
+                { title: "Link three", url: "#" },
+              ],
+            },
+            {
+              title: "Contact",
+              url: "#",
+              sublinks: [
+                { title: "Link one", url: "#" },
+                { title: "Link two", url: "#" },
+                { title: "Link three", url: "#" },
+              ],
+            },
+            { title: "Blog", url: "#" },
+            { title: "Login", url: "#" },
           ]}
         />
       </ContentSection>

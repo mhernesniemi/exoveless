@@ -15,11 +15,11 @@ export default function MobileSubmenu({ item, title }: MobileSubmenuProps) {
   return (
     <div>
       <button
-        className="flex items-center justify-between w-full py-2 text-lg border-t border-gray-700"
+        className="flex items-center justify-between w-full py-2 text-lg border-t border-gray-300"
         onClick={() => setSubMenuOpen(true)}
       >
         {title}
-        <ChevronRightIcon className="h-6 w-6 fill-black" />
+        <ChevronRightIcon className="h-6 w-6 text-black" />
       </button>
       <Transition
         as={Fragment}
@@ -48,7 +48,7 @@ export default function MobileSubmenu({ item, title }: MobileSubmenuProps) {
               <div key={index}>
                 <Link
                   href={sublink.url}
-                  className="block py-3 text-lg border-t border-gray-700"
+                  className="block py-3 text-lg border-t border-gray-300"
                 >
                   {sublink.title}
                 </Link>
